@@ -1,0 +1,253 @@
+@mixin buttonSettings {
+    color: white;
+    background-color: $buttonBackground;
+    padding: 15px 40px;
+    font-weight: 600;
+    border: rgb(105,153,0);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+@mixin linkSettings {
+    color: $sectionColor;
+    font-size: map-get($fontSizes, "small");
+}
+
+@mixin textSettings {
+    font-size: map-get($fontSizes, "small");
+    text-align: justify;
+    font-family: $additionalFont;
+    line-height: $normalLineHeight;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fonts;
+    color: $mainColor;
+    font-size: map-get($fontSizes, "medium");
+    background-color: $mainBackground;
+}
+
+header {
+    background: $headerBackground center/cover;
+    padding: 20px 140px;
+    min-height: 700px;
+    border-bottom-right-radius: 50em 17em;
+    
+    .header-wrap {
+        
+        .landing-logo {
+            display: flex;
+            margin-bottom: 50px;
+            
+            p {
+                font-size: map-get($fontSizes, "large");
+                font-weight: bold;
+                line-height: $smallLineHeight;
+                margin-left: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            
+                span {
+                    display: block;
+                    text-align: center;
+                    font-size: map-get($fontSizes, "tiny");
+                }
+            }
+        }
+        
+        .header_heading {
+            
+            font-size: $headingFontSize;
+            font-weight: bold;
+            line-height: $smallLineHeight;
+            max-width: 500px;
+            position: relative;
+            z-index: 5;
+            
+            &::before {
+                content: '';
+                display: block;
+                width: 250px;
+                height: 43px;
+                background-color: $wordsBackground;
+                position: absolute;
+                bottom: 12px;
+                left: 1px;
+                z-index: -1;
+            }
+        }
+        
+        .header_text {
+            white-space: pre-line;
+            margin-bottom: 50px;
+        }
+        
+        .header_text + div {
+            
+            .header_button {
+                @include buttonSettings;
+                margin-right: 90px;
+            }
+            
+            .login {
+                color: white;
+            }
+            
+        }
+    }
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    color: $sectionColor;
+    
+    .section_text {
+        margin-bottom: 20px;
+        font-size: map-get($fontSizes, "large");
+        font-weight: bold;
+        position: relative;
+        color: $mainColor;
+    
+        &::before {
+        content: '';
+        display: block;
+        width: 111px;
+        height: 30px;
+        background-color: $wordsBackground;
+        position: absolute;
+        left: 487px;
+        bottom: 10px;
+        z-index: -1;
+            
+        }
+    
+    }
+    
+    .section_card {
+        display: flex;
+        justify-content: space-between;
+        background-color: $sectionBackground;
+        margin-bottom: 20px;
+        padding: 15px;
+        min-height: 300px;
+        border-radius: $borderRadius;
+        
+        .section_card_img {
+            width: 85%;
+            flex-shrink: 0.75;
+            border-radius: $borderRadius;
+        }
+        
+        .section_card_right_container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 70px;
+            
+            .section_card_heading {
+                font-size: map-get($fontSizes, "large");
+                font-weight: bold;
+                color: $sectionHeadingColor;
+            }
+            
+            .section_card_text {
+                margin: 30px 0 20px;
+                @include textSettings;
+            }
+            
+            .section_link {
+                @include linkSettings;
+            }
+        }
+    }
+    
+    .section_banner {
+        width: 1000px;
+        min-height: 110px;
+        background: linear-gradient(to right, $gradientStart, $gradientEnd);
+        border-radius: $borderRadius;
+        transform: translate(-20px, 70%);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        .section_banner_text_wrap {
+            
+            margin-bottom: 10px;
+            
+            .section_banner_heading {
+                @extend .section_text;
+                margin: 0;
+                z-index: 5;                
+                
+                &::before {
+                    left: 98px;
+                    width: 53px;
+                    bottom: 10px;
+                }
+            }
+            
+            .section_banner_text {
+                @include textSettings;
+            }
+        }
+        
+        .section_banner_button {
+            @include buttonSettings;
+        }
+    }    
+    
+}
+
+footer {
+    background-color: $footerBackground;
+    min-height: 250px;
+    padding: 50px;
+    display: flex;
+    align-items: flex-end;
+    color: $sectionColor;
+    
+    .footer-wrap {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        
+        .footer_logo {
+            display: flex;
+            align-items: center;
+            
+            p {
+                font-size: map-get($fontSizes, "large");
+                font-weight: bold;
+                line-height: $smallLineHeight;
+                margin-left: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+        
+                span {
+                    display: block;
+                    text-align: center;
+                    font-size: map-get($fontSizes, "tiny");
+                }
+            }
+            
+        }
+        
+        .footer_text {
+            @include textSettings;
+            max-width: 300px;
+        }
+    }
+    
+}
