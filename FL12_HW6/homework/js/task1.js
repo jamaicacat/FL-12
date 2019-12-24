@@ -4,7 +4,7 @@ let a = +prompt('Enter A value...',''),
     d;
 const powerFactor = 2,
       discriminantCoefficient = 4,
-      divisionRation = 2;
+      divisionRatio = 2;
 if (isNaN(a) || isNaN(b) || isNaN(c) || (a && b) === 0) {
     console.log('Invalid data input!');
 } else {
@@ -17,7 +17,7 @@ if (d < 0) {
     let x = Math.round(-b / (2 * a));
     console.log('x = ', x);
 } else if (d > 0) {
-    let x1 = Math.round((-b + Math.sqrt(d)) / (divisionRation * a));
-    let x2 = Math.round((-b - Math.sqrt(d)) / (divisionRation * a));
+    let x1 = Math.round((-b + Math.sqrt(d)) / (divisionRatio * a));
+    let x2 = Math.round((-b - Math.sqrt(d)) / (divisionRatio * a));
     console.log('x1 = ' + x1 + ' and x2 = ' + x2);
 }
