@@ -16,7 +16,8 @@ function Fighter(obj) {
         getHealth: () => health,
         attack: function(enemy) {
             const MISS_PROBABILITY = enemy.getStrength() + enemy.getAgility();
-            let attackProbability = Math.random() * 100;
+            const MAX_CHANSE = 100;
+            let attackProbability = Math.random() * MAX_CHANSE;
             if (attackProbability > MISS_PROBABILITY) {
                 enemy.dealDamage(this.getDamage());
                 console.log(`${this.getName()} makes ${this.getDamage()} damage to ${enemy.getName()}`);
