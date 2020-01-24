@@ -1,0 +1,35 @@
+* {
+    font-size: 26px;
+}
+
+ul {
+    padding-left: 15px;
+    list-style-type: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+ul li {
+    font-style: normal;
+}
+
+ul:hover li:hover {
+    background-color: #f2f2f2;
+}
+
+.folderOpened > li {
+    display: block;
+}
+
+.folderClosed > li {
+    display: none;
+}
+
+.folder_items {
+    margin-left: 15px;
+    padding-inline-start: 0;
+}
+
+.hidden {
+    display: none;
+}
